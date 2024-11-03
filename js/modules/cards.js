@@ -1,3 +1,5 @@
+import { getData } from "../services/services";
+
 function cards() {
     // Cards
     class Card {
@@ -38,16 +40,6 @@ function cards() {
             this.price = +this.price * this.transfer
         }
     }
-    
-    const getData = async (url) => {
-        const res = await fetch(url)
-
-        if (!res.ok) {
-            throw new Error();
-        }
-
-        return await res.json();
-    }
 
     // Получение данных карточек от сервера
     // getData('http://localhost:3000/menu')
@@ -65,4 +57,4 @@ function cards() {
     })
 }
 
-module.exports = cards;
+export default cards;

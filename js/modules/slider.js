@@ -1,21 +1,15 @@
-function slider() {
-    function getZero(num) {
-        if (num >= 0 && num < 10) {
-            return `0${num}`
-        } else {
-            return num;
-        }
-    }
+import { getZero } from "./timer";
 
+function slider({container, slides, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field}) {
     // slider
-    const slide = document.querySelectorAll('.offer__slide'),
-          sliderParent = document.querySelector('.offer__slider'),
-          prevBtn = document.querySelector('.offer__slider-prev'),
-          nextBtn = document.querySelector('.offer__slider-next'),
-          currSlide = document.querySelector('#current'),
-          totalSlide = document.querySelector('#total');
-    const slidesWrapper = document.querySelector('.offer__slider-wrapper'),
-          slidesField = document.querySelector('.offer__slider-inner'),
+    const slide = document.querySelectorAll(slides),
+          sliderParent = document.querySelector(container),
+          prevBtn = document.querySelector(prevArrow),
+          nextBtn = document.querySelector(nextArrow),
+          currSlide = document.querySelector(currentCounter),
+          totalSlide = document.querySelector(totalCounter);
+    const slidesWrapper = document.querySelector(wrapper),
+          slidesField = document.querySelector(field),
           width = window.getComputedStyle(slidesWrapper).width;
     let currentSlide = 0
     let offset = 0;
@@ -196,4 +190,4 @@ function slider() {
 
 }
 
-module.exports = slider;
+export default slider;
